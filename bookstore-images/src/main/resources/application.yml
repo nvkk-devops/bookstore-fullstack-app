@@ -1,0 +1,18 @@
+server:
+  port: 8082
+
+welcomeMsg: "Welcome To Book Store ! Total Available Books 5."
+
+# milli-seconds delay
+staticdelay: 2000
+
+application:
+  books:
+    - bookId: 1001
+      imageUrl: "content/images/bookstore/Effective_Java_3rd_Edition.jpg"
+    - bookId: 1002
+      imageUrl: "content/images/bookstore/Clean_Code.jpg"
+    - bookId: 1003
+      imageUrl: "content/images/bookstore/Spring_in_Action_Big.png"
+    - bookId: 1004
+      imageUrl: "content/images/bookstore/coming-soon.png"

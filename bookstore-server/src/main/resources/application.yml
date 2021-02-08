@@ -1,0 +1,35 @@
+server:
+  port: 8080
+
+logging.level.com.venkata: DEBUG
+
+bookstore.images.url: "http://localhost:8082"
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic
+
+welcomeMsg: "Welcome To Book Store ! Total Available Books 5."
+
+application:
+  books:
+    - bookId: 1001
+      bookTitle: "Effecive Java"
+      authorName: "Joshuva Bloch"
+      countOfPages: 200
+    - bookId: 1002
+      bookTitle: "Clean Code"
+      authorName: "Robert C. Martin"
+      countOfPages: 300
+    - bookId: 1003
+      bookTitle: "Spring in Action"
+      authorName: "Craig Walls"
+      countOfPages: 400
+    - bookId: 1004
+      bookTitle: "New Suprise Launch"
+      authorName: "Surpise..."
+      countOfPages: 100

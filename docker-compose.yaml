@@ -1,0 +1,28 @@
+version: "3"
+services:
+  bookstore-server:
+    build: bookstore-server/.
+    #image: dockernvkk/bookstore-app:server
+    environment:
+      - BOOKSTORE_IMAGES_URL=http://bookstore-images:8082
+    ports:
+      - 8080:8080
+    depends_on:
+      - bookstore-images
+  bookstore-images:
+    build: bookstore-images/.
+    # image: dockernvkk/bookstore-app:images
+    environment:
+      - STATICDELAY=500
+    ports:
+      - 8082:8082
+  bookstore-web:
+    build: bookstore-web/.
+    container_name: bookstore-web
+    environment:
+      - BOOKSTORE_SERVER_HOST=bookstore-server
+      - PORT=9000
+    ports:
+      - 9000:9000
+    depends_on:
+      - bookstore-server
